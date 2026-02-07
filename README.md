@@ -6,6 +6,23 @@ A comprehensive system monitoring dashboard for Linux systems, specifically opti
 ![Platform](https://img.shields.io/badge/Platform-Linux-green.svg)
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
+## 🚀 Quick Install
+
+```bash
+# Clone the repository
+git clone https://github.com/Gerritbandison/system-command-center.git
+cd system-command-center
+
+# Run the installer
+chmod +x install-local.sh
+./install-local.sh
+
+# Launch the monitor
+sysmon-sudo
+```
+
+That's it! The monitor will launch with full GPU temperature access.
+
 ## Features
 
 ### Hardware Monitoring
@@ -66,19 +83,51 @@ sudo sensors-detect
 
 ## Installation
 
+### Method 1: Automated Install (Recommended)
+
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/system-command-center.git
+git clone https://github.com/Gerritbandison/system-command-center.git
+cd system-command-center
+
+# Run the installer
+chmod +x install-local.sh
+./install-local.sh
+```
+
+This installs to `~/.local/bin/sysmon` and creates a desktop launcher.
+
+### Method 2: Manual Run
+
+```bash
+# Clone the repository
+git clone https://github.com/Gerritbandison/system-command-center.git
 cd system-command-center
 
 # Install dependencies
 sudo apt install python3-tk lm-sensors
+sudo sensors-detect --auto
 
-# Run the latest version (v4)
+# Run directly
 sudo python3 system_command_center_v4.py
 ```
 
 ## Usage
+
+### After Installation
+
+```bash
+# Run with GPU temperature access (recommended)
+sysmon-sudo
+
+# Or run without sudo (limited GPU info)
+sysmon
+
+# Or launch from application menu
+# Search for "System Command Center"
+```
+
+### Manual Run (without installation)
 
 ```bash
 # Run with sudo for GPU temperature access
